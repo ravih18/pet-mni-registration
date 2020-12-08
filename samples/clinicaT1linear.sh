@@ -8,7 +8,7 @@
 #SBATCH --output=logs/train_%j.log
 #SBATCH --error=errors/train_%j.log
 
-module load clinica
+module load clinica/aramis
 
 BIDS=/network/lustre/dtlake01/aramis/users/ravi.hassanaly/datasets/mini_adni_bids/
 CAPS=/network/lustre/dtlake01/aramis/users/ravi.hassanaly/datasets/mini_adni_caps/
