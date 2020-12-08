@@ -8,7 +8,6 @@
 #SBATCH --output=logs/train_%j.log
 #SBATCH --error=errors/train_%j.log
 
-
 module load ANTs
 
 BIDS=/network/lustre/dtlake01/aramis/users/ravi.hassanaly/datasets/mini_adni_bids/
