@@ -1,17 +1,18 @@
 #!/bin/bash
+#SBATCH --job-name=test_ANTs
 #SBATCH --partition=normal
 #SBATCH --time=02:00:00
-#SBATCH --mem=2G
+#SBATCH --mem=4G
 #SBATCH --cpus-per-task=4
 #SBATCH --chdir=.
 #SBATCH --output=logs/train_%j.log
 #SBATCH --error=errors/train_%j.log
-#SBATCH --job-name=test_ANTs
+
 
 module load ANTs
 
-A=/network/lustre/dtlake01/aramis/users/ravi.hassanaly/datasets/mini_adni_bids/sub-ADNI029S1384/ses-M00/pet/sub-ADNI029S1384_ses-M00_task-rest_acq-fdg_pet.nii.gz
-B=/network/lustre/dtlake01/aramis/users/ravi.hassanaly/datasets/mini_adni_bids/sub-ADNI029S1384/ses-M00/anat/sub-ADNI029S1384_ses-M00_T1w.nii.gz
+A="/network/lustre/dtlake01/aramis/users/ravi.hassanaly/datasets/mini_adni_bids/sub-ADNI029S1384/ses-M00/pet/sub-ADNI029S1384_ses-M00_task-rest_acq-fdg_pet.nii.gz"
+B="/network/lustre/dtlake01/aramis/users/ravi.hassanaly/datasets/mini_adni_bids/sub-ADNI029S1384/ses-M00/anat/sub-ADNI029S1384_ses-M00_T1w.nii.gz"
 
 echo fixed image MRI $B
 echo moving image PET $A
