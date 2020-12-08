@@ -21,7 +21,7 @@ echo moving image PET $A
 antsRegistrationSyNQuick.sh -d 3 -f $B -m $A -o ${OUTPUT}RegPET2MRI 
 echo "RegA2B registration done"
 
-antsApplyTransforms -d 3 -i $A -o ${OUTPUT}normal/PETDeformed.nii.gz -r $B -t ${OUTPUT}normal/RegPET2MRI1Warp.nii.gz -t ${OUTPUT}RegPET2MRI0GenericAffine.mat
+antsApplyTransforms -d 3 -i $A -o ${OUTPUT}normal/PETDeformed.nii.gz -r $B -t ${OUTPUT}RegPET2MRI1Warp.nii.gz -t ${OUTPUT}RegPET2MRI0GenericAffine.mat
 echo "First transformation done"
-antsApplyTransforms -d 3 -i $B -o ${OUTPUT}inverse/MRIDeformed.nii.gz -r $A -t [${OUTPUT}inverse/RegPET2MRI0GenericAffine.mat,1] -t ${OUTPUT}RegPET2MRI1InverseWarp.nii.gz
+antsApplyTransforms -d 3 -i $B -o ${OUTPUT}inverse/MRIDeformed.nii.gz -r $A -t [${OUTPUT}RegPET2MRI0GenericAffine.mat,1] -t ${OUTPUT}RegPET2MRI1InverseWarp.nii.gz
 echo "Second transformation done"
