@@ -21,4 +21,4 @@ TRANSFORM=RegPET2MRI
 
 antsRegistrationSyNQuick.sh -d $dim -t 'r' -f ${INPUT}${MRI}.nii.gz -m ${INPUT}${PET}.nii.gz -o ${OUTPUT}${TRANSFORM}
 
-antsApplyTransforms -d 3 -i ${INPUT}${PET}.nii.gz -o ${OUTPUT}${RPET}.nii.gz -r ${INPUT}${MRI}.nii.gz -t ${OUTPUT}${TRANSFORM}1Warp.ni
+antsApplyTransforms -d 3 -i ${INPUT}${PET}.nii.gz -o ${OUTPUT}${RPET}.nii.gz -r ${INPUT}${MRI}.nii.gz -t ${OUTPUT}${TRANSFORM}1Warp.nii.gz
