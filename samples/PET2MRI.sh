@@ -19,6 +19,6 @@ OUTPUT=/network/lustre/dtlake01/aramis/users/ravi.hassanaly/datasets/pet-linear/
 RPET=RegisteredPET
 TRANSFORM=RegPET2MRI
 
-antsRegistrationSyNQuick.sh -d $dim -t 'r' -f ${ROOT}${MRI}.nii.gz -m ${ROOT}${PET}.nii.gz -o ${OUTPUT}${TRANSFORM}
+antsRegistrationSyNQuick.sh -d $dim -t 'r' -f ${INPUT}${MRI}.nii.gz -m ${INPUT}${PET}.nii.gz -o ${OUTPUT}${TRANSFORM}
 
-antsApplyTransforms -d 3 -i ${ROOT}${PET}.nii.gz -o ${OUTPUT}${RPET}.nii.gz -r ${ROOT}${MRI}.nii.gz -t ${OUTPUT}${TRANSFORM}1Warp.ni
+antsApplyTransforms -d 3 -i ${INPUT}${PET}.nii.gz -o ${OUTPUT}${RPET}.nii.gz -r ${INPUT}${MRI}.nii.gz -t ${OUTPUT}${TRANSFORM}1Warp.ni
